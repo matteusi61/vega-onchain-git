@@ -24,3 +24,5 @@ Ran 4 tests for test/VersionManagerAnvil.t.sol:VersionManagerAnvilTest
 Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 65.79ms (74.49ms CPU time)
 
 Ran 1 test suite in 183.86ms (65.79ms CPU time): 4 tests passed, 0 failed, 0 skipped (4 total tests)
+
+### Тест на Anvil удалил из-за крестрика ((
