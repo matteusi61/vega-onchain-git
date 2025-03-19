@@ -24,7 +24,7 @@ contract VersionManagerAnvilTest is Test {
 
     function setUp() public {
         console.log("Current chainId:", block.chainid);
-        if (block.chainid != 31337) { 
+        if (block.chainid != 31337) {
             vm.skip(true);
             return;
         }
@@ -36,7 +36,7 @@ contract VersionManagerAnvilTest is Test {
     }
 
     function testUpgrade() public {
-        if (block.chainid != 31337) { 
+        if (block.chainid != 31337) {
             vm.skip(true);
             return;
         }
@@ -61,8 +61,7 @@ contract VersionManagerAnvilTest is Test {
     }
 
     function testRollback() public {
-        
-        if (block.chainid != 31337) { 
+        if (block.chainid != 31337) {
             vm.skip(true);
             return;
         }
@@ -95,8 +94,7 @@ contract VersionManagerAnvilTest is Test {
     }
 
     function testSecurity() public {
-
-        if (block.chainid != 31337) { 
+        if (block.chainid != 31337) {
             vm.skip(true);
             return;
         }
@@ -115,8 +113,7 @@ contract VersionManagerAnvilTest is Test {
     }
 
     function testMultipleUpgrades() public {
-
-        if (block.chainid != 31337) { 
+        if (block.chainid != 31337) {
             vm.skip(true);
             return;
         }
