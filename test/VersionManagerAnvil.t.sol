@@ -23,6 +23,11 @@ contract VersionManagerAnvilTest is Test {
     address user = 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266;
 
     function setUp() public {
+        console.log("Current chainId:", block.chainid);
+        if (block.chainid != 31337) { 
+            vm.skip(true);
+            return;
+        }
         v1 = CounterV1(V1_ADDRESS);
         v2 = CounterV2(V2_ADDRESS);
         v3 = CounterV3(V3_ADDRESS);
@@ -31,6 +36,10 @@ contract VersionManagerAnvilTest is Test {
     }
 
     function testUpgrade() public {
+        if (block.chainid != 31337) { 
+            vm.skip(true);
+            return;
+        }
         CounterV1 old = CounterV1(address(proxy));
         old.increment();
         old.increment();
@@ -52,6 +61,11 @@ contract VersionManagerAnvilTest is Test {
     }
 
     function testRollback() public {
+        
+        if (block.chainid != 31337) { 
+            vm.skip(true);
+            return;
+        }
         CounterV1 inst = CounterV1(address(proxy));
 
         inst.increment();
@@ -81,6 +95,12 @@ contract VersionManagerAnvilTest is Test {
     }
 
     function testSecurity() public {
+
+        if (block.chainid != 31337) { 
+            vm.skip(true);
+            return;
+        }
+
         vm.prank(user);
         vm.expectRevert();
         manager.upgradeTo(address(v2));
@@ -95,6 +115,12 @@ contract VersionManagerAnvilTest is Test {
     }
 
     function testMultipleUpgrades() public {
+
+        if (block.chainid != 31337) { 
+            vm.skip(true);
+            return;
+        }
+
         vm.prank(owner);
         manager.upgradeTo(address(v2));
         vm.prank(owner);
