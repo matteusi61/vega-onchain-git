@@ -11,7 +11,7 @@ import "../src/MyProxy.sol";
 contract DeployScript is Script {
     function run() public {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
-        address deployer = vm.addr(deployerPrivateKey);
+        address deployer = 0xa0Ee7A142d267C1f36714E4a8F75612F20a79720;
 
         vm.startBroadcast(deployerPrivateKey);
 
